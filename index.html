@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAgenda</title>
+    <link rel="stylesheet" href="CSS/style1.css">
+    <!-- <link rel="stylesheet" href="fontawesome-5/css/all.css"> -->
+    <!-- <script src="jquery/dist/jquery.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div id="body" style="display: flex">
+        <div id="toggle-menu">
+            <i class="fas fa-stream"></i>
+        </div>
+        <div id="hide1">
+            <nav>
+                <div id="nav-title">
+                    <h1>Menu</h1>
+                </div>
+                <div id="nav-task">
+                    <h1>TÂCHES</h1>
+                    <div id="nav-div-task-">
+
+                        <div class="task-elt-div active">
+                            <p><i class="fas fa-list-ol"></i>Liste des tâches</p>
+                            <span>0</span>
+                        </div>
+                        <div class="task-elt-div">
+                            <p><i class="fas fa-angle-double-right"></i>Tâches à venir</p>
+                            <span>0</span>
+                        </div>
+                        <div class="task-elt-div">
+                            <p><i class="fas fa-calendar-alt"></i> Calendrier</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="nav-event">
+                    <h1>ÉVÈNEMENTS</h1>
+                    <div id="perso" class="nav-event-state">
+                        <div></div>
+                        <p>Personnel</p>
+                        <span>0</span>
+                    </div>
+                    <div id="profe" class="nav-event-state">
+                        <div></div>
+                        <p>Professionel</p>
+                        <span>0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="task">
+            <h1 id="task-title">Aujourd'hui <span></span></h1>
+            <div id="task-div">
+                <p id="task-add" class="add-smt"><i class="fas fa-plus"></i>Nouvelle tâche</p>
+                <div id="task-list">
+                    <!-- <div class="task-list-elt">
+                        <h1>Chercher un appart <i class="fas fa-angle-right"></i></h1>
+                        <div class="task-elt" id="id-task-0">
+                            <span><i class="fas fa-calendar-times"></i>17/08/23</span>
+                            <div class="task-div-priority">
+                                <p class="task-subtasks"><span>2</span></p>
+                            </div>
+                            <div class="perso state-task">
+                                <div></div>
+                                <p>Personnel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="task-list-elt">
+                        <h1>Faire les courses<i class="fas fa-angle-right"></i></h1>
+                        <div class="task-elt" id="id-task-1">
+                            <span><i class="fas fa-calendar-times"></i>30/08/23</span>
+                            <div class="task-div-priority">
+                                <p class="task-subtasks"><span>1</span> </p>
+                            </div>
+                            <div class="profe state-task">
+                                <div></div>
+                                <p>Professionel</p>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+        <div id="hide2">
+            <div id="modify-task">
+                <div id="modify-task-div1-des">
+
+                    <h1 id="md-task">TÂCHE :</h1>
+                    <form id="form0" name="form0">
+                        <p class="md-task-des" id="name-task"><input name="name-task" type="text" placeholder="Tâche" required></p>
+                        <p class="md-task-des" id="descript-task"><textarea name="descript-task" placeholder="Description" required></textarea></p>
+                    </form>
+                    <div id="md-task-div-des">
+                        <form id="form1" name="form1">
+                            <p>Plan: </p>
+                            <select name="task-state">
+                            <option value="Personnel">Personnel</option>
+                            <option value="Professionnel">Professionnel</option>
+                        </select>
+                        </form>
+                        <div id="md-date">
+                            <span>Pour le: </span>
+                            <p>27/08/23 </p><i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div id="md-priority">
+                            <span>Niveau de priorité:</span>
+                            <form id="form2" name="form2">
+                                <input type="radio" name="priority" id="vimp" value="3">
+                                <label for="vimp">3</label>
+                                <input type="radio" name="priority" id="imp" value="2">
+                                <label for="imp">2</label>
+                                <input type="radio" name="priority" id="nimp" value="1" checked>
+                                <label for="nimp">1</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="modify-task-div2-des">
+                    <h1>Sous-tâches:</h1>
+                    <p class="add-smt" id="subtask-add"><i class="fas fa-plus"></i>Ajouter : <input type="text" id="subtaskInput"> </p>
+                    <div id="list-subtask">
+                        <ul>
+                            <li>Une brosse a dent</li>
+                            <li>Des provisions</li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div id="modify-task-div3-des">
+                    <p id="deleteAll">Supprimer les tâches</p>
+                    <p id="modify">Sauvegarder</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="aVenirDiv">
+        <div>
+            <h1>Cette semaine <span></span></h1>
+            <ul>
+            </ul>
+        </div>
+    </div>
+    <div id="categ">
+        <div>
+            <h1>Titre</h1>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div id="calendrierDiv">
+        <table class=tbCal>
+            <tr>
+                <td colspan=7>
+                    <table>
+                        <tr>
+                            <td class="BtChangeDate" id="changeMonthLeft">
+                                <i class="fas fa-chevron-circle-left "></i>
+                            </td>
+                            <td class="LbChangeDate" id=MonthNAme name=MonthName></td>
+                            <td class="BtChangeDate" id="changeMonthRight">
+                                <i class="fas fa-chevron-circle-right "></i>
+                            </td>
+                            <td class="BtChangeDate" id="changeYearLeft">
+                                <i class="fas fa-chevron-circle-left "></i>
+                            </td>
+                            <td class="LbChangeDate" id=YearValue name=YearValue STYLE="width:25px">année</td>
+                            <td class="BtChangeDate" id="changeYearRight">
+                                <i class="fas fa-chevron-circle-right ">
+                        </td>
+                    </tr>
+                </TABLE>
+
+            </td>
+        </tr>
+        <tr>
+            <td id=DayName1 name=DayName1 class="DayName">Lu</td>
+            <td id=DayName2 name=DayName2 class="DayName">Ma</td>
+            <td id=DayName3 name=DayName3 class="DayName">Me</td>
+            <td id=DayName4 name=DayName4 class="DayName">Je</td>
+            <td id=DayName5 name=DayName5 class="DayName">Ve</td>
+            <td id=DayName6 name=DayName6 class="DayName">Sa</td>
+            <td id=DayName7 name=DayName7 class="DayName">Di</td>
+        </tr>
+        <tr>
+            <td id=S1J1 name=S1J1></td>
+            <td id=S1J2 name=S1J2></td>
+            <td id=S1J3 name=S1J3></td>
+            <td id=S1J4 name=S1J4></td>
+            <td id=S1J5 name=S1J5></td>
+            <td id=S1J6 name=S1J6></td>
+            <td id=S1J7 name=S1J7></td>
+        </tr>
+        <tr>
+            <td id=S2J1 name=S2J1></td>
+            <td id=S2J2 name=S2J2></td>
+            <td id=S2J3 name=S2J3></td>
+            <td id=S2J4 name=S2J4></td>
+            <td id=S2J5 name=S2J5></td>
+            <td id=S2J6 name=S2J6></td>
+            <td id=S2J7 name=S2J7></td>
+        </tr>
+        <tr>
+            <td id=S3J1 name=S3J1></td>
+            <td id=S3J2 name=S3J2></td>
+            <td id=S3J3 name=S3J3></td>
+            <td id=S3J4 name=S3J4></td>
+            <td id=S3J5 name=S3J5></td>
+            <td id=S3J6 name=S3J6></td>
+            <td id=S3J7 name=S3J7></td>
+        </tr>
+        <tr>
+            <td id=S4J1 name=S4J1></td>
+            <td id=S4J2 name=S4J2></td>
+            <td id=S4J3 name=S4J3></td>
+            <td id=S4J4 name=S4J4></td>
+            <td id=S4J5 name=S4J5></td>
+            <td id=S4J6 name=S4J6></td>
+            <td id=S4J7 name=S4J7></td>
+        </tr>
+        <tr>
+            <td id=S5J1 name=S5J1></td>
+            <td id=S5J2 name=S5J2></td>
+            <td id=S5J3 name=S5J3></td>
+            <td id=S5J4 name=S5J4></td>
+            <td id=S5J5 name=S5J5></td>
+            <td id=S5J6 name=S5J6></td>
+            <td id=S5J7 name=S5J7></td>
+        </tr>
+        <tr>
+            <td id=S6J1 name=S6J1></td>
+            <td id=S6J2 name=S6J2></td>
+            <td id=S6J3 name=S6J3></td>
+            <td id=S6J4 name=S6J4></td>
+            <td id=S6J5 name=S6J5></td>
+            <td id=S6J6 name=S6J6></td>
+            <td id=S6J7 name=S6J7></td>
+        </tr>
+    </table>
+
+    </div>
+</body>
+
+</html>
