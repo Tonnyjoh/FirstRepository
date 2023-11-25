@@ -222,6 +222,12 @@ window.addEventListener("load", function() {
                         hide1.hide();
                     }
                     break;
+                case 1:
+                    blurDiv();
+                    if (window.innerWidth < 1200) {
+                        hide1.hide();
+                    }
+                    break;
             }
         }
     }
